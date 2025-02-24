@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <title>Ashley Kharbanda's Lab 4</title>
+        <style>
+            body {
+                font-family: "Helvetica";
+                background-color: rgb(213, 242, 255);
+            }
+            .container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+                width: 100%;
+                text-align: center
+            }
+            .section {
+                padding: 20px;
+                border: 4px solid #000000;
+                border-radius: 15px;
+                text-align: center;
+                background-color: #75a6eb;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="header">INST 377 Lab 4 - Ashley Kharbanda</h1>
+        <div class="container">
+            <div class="section">
+                <form name = "nameForm" onsubmit="return (alertName())">
+                <label for="Name">Name: </label>
+                <input type="text" id="Name" placeholder="ex. Sarah" required>
+                <input type="submit" value="Alert Me!">
+                </form>
+            </div>
+            <div class="section">
+                <input type="submit" id="subColor" onclick= "changeColor()" value="Change Color!">
+            </div>
+            <div class="section">
+                <form name = "textTextForm" onsubmit="return (validateTexting())">
+                <label for="textTester">Text Tester: </label>
+                <input type="text" id="textTester"  required>
+                <input type="submit" value="Validate Text!">
+                </form>
+            </div>
+            <div class="section">
+                <input type="submit" id="subText" onclick="addText()" value="Add Text!">
+            </div>
+        </div>
+
+         <!-- Javascript Code -->
+        <script type="text/javascript">
+
+            function alertName() {
+                alert('Hello ' + document.getElementById('Name').value + "!");
+            }
+
+            function validateTexting(){
+                var validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+                if (validation.test(document.textTextForm.textTester.value)){
+                    alert("Cannot use special characters!");
+                    return false;
+                }else{
+                    alert("Validated!")
+                
+                }
+            }
+            function addText(){
+                var header = document.getElementById('header');
+                header.innerText = header.innerText + " Add Text"
+            }
+            function changeColor() {
+                if (document.body.style.backgroundColor  == 'pink') {
+                    document.body.style.backgroundColor = 'purple';
+                } 
+                else 
+                {
+                    document.body.style.backgroundColor = 'pink';
+                }
+            }
+        </script>
+    </body>
+</html>
