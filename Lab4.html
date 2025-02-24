@@ -58,6 +58,10 @@
                 var validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
                 if (validation.test(document.textTextForm.textTester.value)){
                     alert("Cannot use special characters!");
+                    return false;
+                }else{
+                    alert("hello!")
+                
                 }
             }
             function addText(){
